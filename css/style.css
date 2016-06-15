@@ -10,4 +10,35 @@ html{
 }
 body{
 	overflow: hidden;
+	/*background-image: url('../img/tlostr.png');*/
 }
+#contener{
+	width: 600px;
+	height: 600px;
+	text-align:center;
+	padding-top: 15%;
+	margin: 0 auto;
+}
+#myBar{
+	width: 20px;
+	border-radius: 5px;
+	height: 40px;
+	margin: 0 auto;
+	padding-top:11px;
+	cursor: pointer;
+	background: #43B9D4;
+
+}
+#Bar{
+	padding-top: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-bottom: 11px;
+	width: 400px;
+	border-radius: 5px;
+	border:2px solid #000;
+	height: 45px;
+	margin: 0 auto;
+	background: #2B7687;
+}
+
