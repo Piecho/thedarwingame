@@ -16,11 +16,13 @@ function preload() {
 	game.load.image('trawa', 'img/sprite/trawa.png', 32, 32);
 	game.load.image('tablice', 'img/sprite/tablice.png', 32, 32);
     game.load.spritesheet('dude', 'img/sprite2.png', 32, 48);
+    game.load.spritesheet('dude2', 'img/sprite3.png', 32, 48);
     game.load.spritesheet('car', 'img/cars1.png');
 }
 
 var car;
 var player;
+var player2;
 var cursors;
 var wid = 0;
 var map;
@@ -37,11 +39,30 @@ var layer3;
 var layer4;
 var layer5;
 var layer6;
-var siatkaflag = true;
-var glownaflag = true;
+var siatkaflag = false;
+var glownaflag = false;
 var flagacar = false;
+var flagaintro = false;
+var flagaintro2 = false;
+var flagaintro3 = false;
 var textsiatka;
 var gdziejestes;
+var textintro0;
+var textintro1;
+var textintro2;
+var textintro3;
+var textintro4;
+var textintro5;
+var textintro01;
+var textintro02;
+var textintro03;
+var textintro04;
+var textintro05;
+var textintro06;
+var textintro07;
+var textintro08;
+var textintro09;
+
 
 function create() {
 	game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -107,7 +128,7 @@ function create() {
 	layer6 = map6.createLayer(0);
 	layer6.resizeWorld();
 
-    player = game.add.sprite(6070, 6000, 'dude');
+    player = game.add.sprite(-100, -100, 'dude');
     game.physics.arcade.enable(player);
 
 	player.animations.add('left', [4, 5, 6, 7], 10, true);
@@ -115,9 +136,17 @@ function create() {
 	player.animations.add('up', [12, 13, 14, 15], 10, true);
 	player.animations.add('down', [0, 1, 2, 3], 10, true);
 
+	player2 = game.add.sprite(9280, 6201, 'dude2');
+    game.physics.arcade.enable(player2);
+
+	player2.animations.add('left', [4, 5, 6, 7], 10, true);
+	player2.animations.add('right', [8, 9, 10, 11], 10, true);
+	player2.animations.add('up', [12, 13, 14, 15], 10, true);
+	player2.animations.add('down', [0, 1, 2, 3], 10, true);
+
     game.camera.follow(player);
 
-    car = game.add.sprite(6000, 6000, 'car');
+    car = game.add.sprite(7520, 13054, 'car');
     car.name = 'car';
     car.anchor.set(0.5);
 
@@ -131,7 +160,7 @@ function create() {
     car.body.setSize(96, 66, 0, 0);
 
     cursors = game.input.keyboard.createCursorKeys();
-	cursors2 = game.input.keyboard.addKeys({ 'Q': Phaser.KeyCode.Q, 'E': Phaser.KeyCode.E, 'W': Phaser.KeyCode.W, 'S': Phaser.KeyCode.S, 'A': Phaser.KeyCode.A, 'D': Phaser.KeyCode.D });
+	cursors2 = game.input.keyboard.addKeys({ 'N': Phaser.KeyCode.N, 'B': Phaser.KeyCode.B,'V': Phaser.KeyCode.V,'C': Phaser.KeyCode.C,'X': Phaser.KeyCode.X,'Z': Phaser.KeyCode.Z, 'Q': Phaser.KeyCode.Q, 'E': Phaser.KeyCode.E, 'W': Phaser.KeyCode.W, 'S': Phaser.KeyCode.S, 'A': Phaser.KeyCode.A, 'D': Phaser.KeyCode.D });
 
 	textsiatka = game.add.text(32, 32, "", { font:'40px Hobo, cursive',  fill: '#E85C2F' });
 	textsiatka.stroke = '#000000';
@@ -141,7 +170,127 @@ function create() {
 	textsiatka.fixedToCamera = true;
     textsiatka.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-50);
 
-    gdziejestes = game.add.text(32, 32, "PARKING I", { font:'30px Hobo, cursive',  fill: '#E85C2F' });
+    textintro09 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro09.stroke = '#000000';
+    textintro09.strokeThickness = 6;
+    textintro09.align = 'center';
+	textintro09.anchor.setTo(0.5, 0.5);
+	textintro09.fixedToCamera = true;
+    textintro09.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-700);
+
+    textintro08 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro08.stroke = '#000000';
+    textintro08.strokeThickness = 6;
+    textintro08.align = 'center';
+	textintro08.anchor.setTo(0.5, 0.5);
+	textintro08.fixedToCamera = true;
+    textintro08.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-650);
+
+    textintro07 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro07.stroke = '#000000';
+    textintro07.strokeThickness = 6;
+    textintro07.align = 'center';
+	textintro07.anchor.setTo(0.5, 0.5);
+	textintro07.fixedToCamera = true;
+    textintro07.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-600);
+
+    textintro06 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro06.stroke = '#000000';
+    textintro06.strokeThickness = 6;
+    textintro06.align = 'center';
+	textintro06.anchor.setTo(0.5, 0.5);
+	textintro06.fixedToCamera = true;
+    textintro06.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-550);
+
+    textintro05 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro05.stroke = '#000000';
+    textintro05.strokeThickness = 6;
+    textintro05.align = 'center';
+	textintro05.anchor.setTo(0.5, 0.5);
+	textintro05.fixedToCamera = true;
+    textintro05.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-500);
+
+    textintro04 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro04.stroke = '#000000';
+    textintro04.strokeThickness = 6;
+    textintro04.align = 'center';
+	textintro04.anchor.setTo(0.5, 0.5);
+	textintro04.fixedToCamera = true;
+    textintro04.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-450);
+
+    textintro03 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro03.stroke = '#000000';
+    textintro03.strokeThickness = 6;
+    textintro03.align = 'center';
+	textintro03.anchor.setTo(0.5, 0.5);
+	textintro03.fixedToCamera = true;
+    textintro03.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-400);
+
+    textintro02 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro02.stroke = '#000000';
+    textintro02.strokeThickness = 6;
+    textintro02.align = 'center';
+	textintro02.anchor.setTo(0.5, 0.5);
+	textintro02.fixedToCamera = true;
+    textintro02.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-350);
+
+    textintro01 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
+	textintro01.stroke = '#000000';
+    textintro01.strokeThickness = 6;
+    textintro01.align = 'center';
+	textintro01.anchor.setTo(0.5, 0.5);
+	textintro01.fixedToCamera = true;
+    textintro01.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-300);
+
+    textintro0 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+	textintro0.stroke = '#000000';
+    textintro0.strokeThickness = 6;
+    textintro0.align = 'center';
+	textintro0.anchor.setTo(0.5, 0.5);
+	textintro0.fixedToCamera = true;
+    textintro0.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-250);
+
+    textintro1 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+	textintro1.stroke = '#000000';
+    textintro1.strokeThickness = 6;
+    textintro1.align = 'center';
+	textintro1.anchor.setTo(0.5, 0.5);
+	textintro1.fixedToCamera = true;
+    textintro1.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-200);
+
+    textintro2 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+	textintro2.stroke = '#000000';
+    textintro2.strokeThickness = 6;
+    textintro2.align = 'center';
+	textintro2.anchor.setTo(0.5, 0.5);
+	textintro2.fixedToCamera = true;
+    textintro2.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-150);
+
+    textintro3 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+	textintro3.stroke = '#000000';
+    textintro3.strokeThickness = 6;
+    textintro3.align = 'center';
+	textintro3.anchor.setTo(0.5, 0.5);
+	textintro3.fixedToCamera = true;
+    textintro3.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-100);
+
+    textintro4 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+	textintro4.stroke = '#000000';
+    textintro4.strokeThickness = 6;
+    textintro4.align = 'center';
+	textintro4.anchor.setTo(0.5, 0.5);
+	textintro4.fixedToCamera = true;
+    textintro4.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-50);
+
+    textintro5 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+	textintro5.stroke = '#000000';
+    textintro5.strokeThickness = 6;
+    textintro5.align = 'center';
+	textintro5.anchor.setTo(0.5, 0.5);
+	textintro5.fixedToCamera = true;
+    textintro5.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-780);
+
+    gdziejestes = game.add.text(32, 32, "DROGA", { font:'30px Hobo, cursive',  fill: '#E85C2F' });
 	gdziejestes.stroke = '#000000';
     gdziejestes.strokeThickness = 6;
     gdziejestes.align = 'left';
@@ -168,6 +317,9 @@ function update() {
 
 	player.body.velocity.x	= 0;
 	player.body.velocity.y	= 0;
+
+	player2.body.velocity.x	= 0;
+	player2.body.velocity.y	= 0;
 
 	if(siatkaflag == true){
 		if (cursors.left.isDown || cursors2.A.isDown)
@@ -306,7 +458,7 @@ function update() {
     if (siatkaflag == true && player.body.x >= 15435 && player.body.x <= 15480 && player.body.y <= 7212 && player.body.y >= 7200){
 		textsiatka.text = "Aby zagrać w siatkę naciśnij E.";
     }
-    else if (flagacar === false && player.body.x < car.body.x + 130 && player.body.x > car.body.x - 60 && player.body.y < car.body.y + 90 && player.body.y > car.body.y - 80){
+    else if (flagacar === false && siatkaflag == true && player.body.x < car.body.x + 130 && player.body.x > car.body.x - 60 && player.body.y < car.body.y + 90 && player.body.y > car.body.y - 80){
 		textsiatka.text = "Aby wsiąść do samochodu naciśnij E.";
 	}
 	else {
@@ -347,6 +499,93 @@ function update() {
 		player.body.x = car.body.x + 100;
 		game.camera.follow(player);
 	}
+
+	if(flagaintro === true){
+		if(car.body.x >= 5536 && car.body.x <= 6080 && car.body.y <= 7520 && car.body.y >= 7503){
+			gdziejestes.text = "PARKING I";
+		}
+		if(car.body.x >= 6000 && car.angle === 160){
+			car.body.velocity.copyFrom(game.physics.arcade.velocityFromAngle(car.angle, 1000));
+		}
+		if(car.body.x < 6000 && car.angle === 160){
+			car.angle = -90;
+		}
+		if(car.angle === -90 && car.body.x < 6050 && car.body.y > 5900){
+			car.body.velocity.copyFrom(game.physics.arcade.velocityFromAngle(car.angle, 1000));
+		}
+		if(car.angle === -90 && car.body.x < 6050 && car.body.y < 5960 && car.body.y > 5950){
+			flagaintro = false;
+			player.body.x = car.body.x + 100;
+			player.body.y = car.body.y;
+			flagaintro2 = true;
+		}
+	}
+
+	if(flagaintro2 === true){
+		player2.animations.stop();
+		player2.frame = 4;
+		game.camera.follow(player);
+		if(player.body.x >= 8750 && player.body.x <= 8770 && player.body.y <= 6080 && player.body.y >= 5980){
+			gdziejestes.text = "PORTIERNIA";
+		}
+		if(player.body.x < 9230){
+			player.body.velocity.x	= 350;
+			player.animations.play('right');
+		}
+		if(player.body.x > 8500 && player.body.y < 6020){
+			player.body.velocity.y	= 350;
+			player.animations.play('down');
+		}
+		if(player.body.x > 8990 && player.body.y < 6200){
+			player.body.velocity.y	= 350;
+			player.animations.play('down');
+		}
+		if(player.body.x > 9224 && player.body.x < 9227){
+			player.animations.stop();
+			player.frame = 8;
+			flagaintro2 = false;
+			flagaintro3 = true;
+		}					
+	}
+
+	if(flagaintro3 === true){
+			textintro09.text = "Witaj przybyszu!";
+			textintro08.text = "Sterować swą postacią możesz WSAD'em bądź strałkami.";
+			textintro07.text = "Prowadzenie samochodu odbywa się po przez strazłki.";
+			textintro06.text = "Aktualnie znajdujesz się w pobliżu portierni";
+			textintro05.text = "o czym informuje Cię napis w lewym-górnym rogu.";
+			textintro04.text = "Przed budynkiem, w miejscu gdzie zaparkowałeś";
+			textintro03.text = "czeka na Ciebie samochód, dokłądnie ten którym tu przyjechałeś.";
+			textintro02.text = "Aby do niego wsiąść i pojeździć po okolicznych parkingach,";
+			textintro01.text = "i drodze, podejdź do niego i kliknij klawisz E.";
+			textintro0.text = "W bibiotece, możesz pograć w mini gry takie jak siatkówka.";
+			textintro1.text = "Aby to zrobić podejdź do komputera znajdującego się";
+			textintro2.text = "w bibliotece i naciśnij klawisz E. Biblioteka znajduje się w Budynku V,";
+			textintro3.text = "do którego poprowadzą Cię drogowskazy umiesczone na ziemi."
+			textintro4.text = "Do zobaczenia!";
+			textintro5.text = "Aby wyjść z tutorialu naciśnij klawisz Q";
+		if(cursors2.Q.isDown){
+			glownaflag = true;
+    		siatkaflag = true;
+    		flagaintro3 = false;
+    		textintro0.text = "";
+			textintro1.text = "";
+			textintro2.text = "";
+			textintro3.text = "";
+			textintro4.text = "";
+			textintro5.text = "";
+			textintro01.text = "";
+			textintro02.text = "";
+			textintro03.text = "";
+			textintro04.text = "";
+			textintro05.text = "";
+			textintro06.text = "";
+			textintro07.text = "";
+			textintro08.text = "";
+			textintro09.text = "";
+			player2.body.x = -100;
+		}
+	}
 }
 
 function render() {
@@ -366,15 +605,22 @@ function frame () {
 	}
 	$('#myBar').css({'width' : wid});
 	if(wid === 400){
-		$("#myBar").append('<div onclick="graj();" id="siatka" style="width: 100px, height: 40px; ">GRAJ</div>');
+		$("#myBar").append('<div onclick="graj();" style="width: 100px, height: 40px; ">GRAJ</div>');
 	}
 };
 
 function graj () {
 	$('#contener').remove();
     $('#glowna').show();
-    // glownaflag = false;
-    // siatkaflag = true; 
+    glownaflag = false;
+    siatkaflag = false;
+    game.camera.follow(car); 
+    intro();
+}
+
+function intro () {
+	car.angle = 160;
+	flagaintro = true;
 }
 
 move();
