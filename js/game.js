@@ -76,8 +76,8 @@ function create() {
 	map = game.add.tilemap('podlogi_sciany_droga');
 	map.addTilesetImage('podlogi_sciany_droga', 'podlogi_sciany_droga');
 
-    layer1 = map.createLayer(0);
- 	map.setCollisionBetween(85, 91);
+	layer1 = map.createLayer(0);
+	map.setCollisionBetween(85, 91);
 	map.setCollisionBetween(97, 105);
 	map.setCollisionBetween(109, 111);
 	map.setCollisionBetween(114, 115);
@@ -87,9 +87,9 @@ function create() {
 	map.setCollisionBetween(157, 158);
 	map.setCollisionBetween(162, 163);
 	map.setCollisionBetween(169, 171);
-    layer1.resizeWorld();
-    game.physics.arcade.enable(layer1);
-    layer1.body.mass = 100;
+	layer1.resizeWorld();
+	game.physics.arcade.enable(layer1);
+	layer1.body.mass = 100;
 
     map2 = game.add.tilemap('szafy_krzesla_lawki_regaly');
     map2.addTilesetImage('szafy_krzesla_lawki_regaly', 'szafy_krzesla_lawki_regaly');
@@ -176,7 +176,7 @@ function create() {
     textintro09.align = 'center';
 	textintro09.anchor.setTo(0.5, 0.5);
 	textintro09.fixedToCamera = true;
-    textintro09.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-700);
+    textintro09.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-430);
 
     textintro08 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro08.stroke = '#000000';
@@ -184,7 +184,7 @@ function create() {
     textintro08.align = 'center';
 	textintro08.anchor.setTo(0.5, 0.5);
 	textintro08.fixedToCamera = true;
-    textintro08.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-650);
+    textintro08.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-400);
 
     textintro07 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro07.stroke = '#000000';
@@ -192,7 +192,7 @@ function create() {
     textintro07.align = 'center';
 	textintro07.anchor.setTo(0.5, 0.5);
 	textintro07.fixedToCamera = true;
-    textintro07.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-600);
+    textintro07.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-370);
 
     textintro06 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro06.stroke = '#000000';
@@ -200,7 +200,7 @@ function create() {
     textintro06.align = 'center';
 	textintro06.anchor.setTo(0.5, 0.5);
 	textintro06.fixedToCamera = true;
-    textintro06.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-550);
+    textintro06.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-340);
 
     textintro05 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro05.stroke = '#000000';
@@ -208,7 +208,7 @@ function create() {
     textintro05.align = 'center';
 	textintro05.anchor.setTo(0.5, 0.5);
 	textintro05.fixedToCamera = true;
-    textintro05.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-500);
+    textintro05.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-310);
 
     textintro04 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro04.stroke = '#000000';
@@ -216,7 +216,7 @@ function create() {
     textintro04.align = 'center';
 	textintro04.anchor.setTo(0.5, 0.5);
 	textintro04.fixedToCamera = true;
-    textintro04.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-450);
+    textintro04.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-280);
 
     textintro03 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro03.stroke = '#000000';
@@ -224,7 +224,7 @@ function create() {
     textintro03.align = 'center';
 	textintro03.anchor.setTo(0.5, 0.5);
 	textintro03.fixedToCamera = true;
-    textintro03.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-400);
+    textintro03.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-250);
 
     textintro02 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro02.stroke = '#000000';
@@ -232,7 +232,7 @@ function create() {
     textintro02.align = 'center';
 	textintro02.anchor.setTo(0.5, 0.5);
 	textintro02.fixedToCamera = true;
-    textintro02.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-350);
+    textintro02.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-220);
 
     textintro01 = game.add.text(32, 32, "", { font:'25px Hobo, cursive',  fill: '#E85C2F' });
 	textintro01.stroke = '#000000';
@@ -240,7 +240,7 @@ function create() {
     textintro01.align = 'center';
 	textintro01.anchor.setTo(0.5, 0.5);
 	textintro01.fixedToCamera = true;
-    textintro01.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-300);
+    textintro01.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-190);
 
     textintro0 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
 	textintro0.stroke = '#000000';
@@ -248,7 +248,7 @@ function create() {
     textintro0.align = 'center';
 	textintro0.anchor.setTo(0.5, 0.5);
 	textintro0.fixedToCamera = true;
-    textintro0.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-250);
+    textintro0.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-160);
 
     textintro1 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
 	textintro1.stroke = '#000000';
@@ -256,7 +256,7 @@ function create() {
     textintro1.align = 'center';
 	textintro1.anchor.setTo(0.5, 0.5);
 	textintro1.fixedToCamera = true;
-    textintro1.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-200);
+    textintro1.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-130);
 
     textintro2 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
 	textintro2.stroke = '#000000';
@@ -264,7 +264,7 @@ function create() {
     textintro2.align = 'center';
 	textintro2.anchor.setTo(0.5, 0.5);
 	textintro2.fixedToCamera = true;
-    textintro2.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-150);
+    textintro2.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-100);
 
     textintro3 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
 	textintro3.stroke = '#000000';
@@ -272,7 +272,7 @@ function create() {
     textintro3.align = 'center';
 	textintro3.anchor.setTo(0.5, 0.5);
 	textintro3.fixedToCamera = true;
-    textintro3.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-100);
+    textintro3.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-70);
 
     textintro4 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
 	textintro4.stroke = '#000000';
@@ -280,17 +280,17 @@ function create() {
     textintro4.align = 'center';
 	textintro4.anchor.setTo(0.5, 0.5);
 	textintro4.fixedToCamera = true;
-    textintro4.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-50);
+    textintro4.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-40);
 
-    textintro5 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#E85C2F' });
+    textintro5 = game.add.text(32, 32, "", { font:'28px Hobo, cursive',  fill: '#EB5E52' });
 	textintro5.stroke = '#000000';
     textintro5.strokeThickness = 6;
     textintro5.align = 'center';
 	textintro5.anchor.setTo(0.5, 0.5);
 	textintro5.fixedToCamera = true;
-    textintro5.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-780);
+    textintro5.cameraOffset.setTo(window.innerWidth/2, window.innerHeight-480);
 
-    gdziejestes = game.add.text(32, 32, "DROGA", { font:'30px Hobo, cursive',  fill: '#E85C2F' });
+    gdziejestes = game.add.text(32, 32, "DROGA", { font:'30px Hobo, cursive',  fill: '#EB5E52' });
 	gdziejestes.stroke = '#000000';
     gdziejestes.strokeThickness = 6;
     gdziejestes.align = 'left';
@@ -472,15 +472,15 @@ function update() {
 	//włączanie siatkówki
 	
 	if (cursors2.E.isDown && siatkaflag == true && player.body.x >= 15435 && player.body.x <= 15480 && player.body.y <= 7212 && player.body.y >= 7200)
-    {
-    	$("body").append('<div id="siatka" style="display: none;"></div>');
-    	siatka();
-    	$('#glowna').hide();
+	{
+		$("body").append('<div id="siatka" style="display: none;"></div>');
+		siatka();
+		$('#glowna').hide();
 		$('#siatka').show();
 		game.paused = true;
-    	siatkaflag = false;
-    	glownaflag = true;
-    }
+		siatkaflag = false;
+		glownaflag = true;
+	}
 
     //wsiadanie i wysiadanie z samochodu
 
@@ -550,18 +550,18 @@ function update() {
 
 	if(flagaintro3 === true){
 			textintro09.text = "Witaj przybyszu!";
-			textintro08.text = "Sterować swą postacią możesz WSAD'em bądź strałkami.";
-			textintro07.text = "Prowadzenie samochodu odbywa się po przez strazłki.";
+			textintro08.text = "Sterować swą postacią możesz WSAD'em bądź strzałkami.";
+			textintro07.text = "Prowadzenie samochodu odbywa się wyłącznie po przez strzałki.";
 			textintro06.text = "Aktualnie znajdujesz się w pobliżu portierni";
 			textintro05.text = "o czym informuje Cię napis w lewym-górnym rogu.";
 			textintro04.text = "Przed budynkiem, w miejscu gdzie zaparkowałeś";
-			textintro03.text = "czeka na Ciebie samochód, dokłądnie ten którym tu przyjechałeś.";
+			textintro03.text = "czeka na Ciebie samochód, dokładnie ten którym tu przyjechałeś.";
 			textintro02.text = "Aby do niego wsiąść i pojeździć po okolicznych parkingach,";
-			textintro01.text = "i drodze, podejdź do niego i kliknij klawisz E.";
+			textintro01.text = "i drodze, podejdź do niego, i kliknij klawisz E.";
 			textintro0.text = "W bibiotece, możesz pograć w mini gry takie jak siatkówka.";
 			textintro1.text = "Aby to zrobić podejdź do komputera znajdującego się";
-			textintro2.text = "w bibliotece i naciśnij klawisz E. Biblioteka znajduje się w Budynku V,";
-			textintro3.text = "do którego poprowadzą Cię drogowskazy umiesczone na ziemi."
+			textintro2.text = "tam i naciśnij klawisz E. Biblioteka znajduje się w Budynku V,";
+			textintro3.text = "do którego poprowadzą Cię drogowskazy umieszczone na ziemi."
 			textintro4.text = "Do zobaczenia!";
 			textintro5.text = "Aby wyjść z tutorialu naciśnij klawisz Q";
 		if(cursors2.Q.isDown){
